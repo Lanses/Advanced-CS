@@ -6,10 +6,6 @@ namespace SomeStuff
 {
     class CalculationOfDistance
     {
-        
-        //public int ResultOfDistanceCalculation()
-        //{
 
-        //}
     }
 }
