@@ -5,22 +5,28 @@ using System.Text;
 
 namespace Queue
 {
-    public class Queue<T> : IEnumerable<T>, ICollection, IEnumerable
+    class Queue<T> : IQueue<T>
     {
-        public int Count => throw new NotImplementedException();
+        private readonly T[] _myQueue;
 
-        public bool IsSynchronized => throw new NotImplementedException();
-
-        public object SyncRoot => throw new NotImplementedException();
-
-        public void CopyTo(Array array, int index)
+        public T Dequeue()
         {
-            throw new NotImplementedException();
+            return _myQueue[0];
+        }
+
+        public void Enqueue(T obj)
+        {
+            _myQueue[0] = obj;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
+        }
+
+        public T Peek()
+        {
+            return _myQueue[0];
         }
 
         IEnumerator IEnumerable.GetEnumerator()
