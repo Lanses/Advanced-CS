@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Event.Deleagte;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Event
-{
-
-    public delegate void HandleEvent(double d);
+{ 
 
     public class EventLogic
     {

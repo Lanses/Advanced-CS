@@ -9,7 +9,6 @@ namespace Travel_Project_v1
     class Program
     {
 
-        //Dictionary
         static void Main(string[] args)
         {
 
@@ -20,6 +19,9 @@ namespace Travel_Project_v1
             EventHandling showPrice = new EventHandling();
             showPrice.ShowTotalFlightPrice(d);
             priceFlight.PriceOfFlight(d);
+
+            PriceDependingDistanceCalculation?.Invoke(PriceOfFlight(d));
+
 
             IPerson owner = new CompanyOwner("Bill", "Rogers");
             IPerson secreatry = new Secretary("Sofia", "Blanc");
