@@ -2,7 +2,7 @@
 
 namespace Stack
 {
-    interface Stack<T> : IEnumerable<T>
+    interface IStack<T> : IEnumerable<T>
     {
         void Push(T elem);
         T Pop();

@@ -1,38 +1,60 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Stack
 {
     class Stack<T> : IStack<T>
     {
-
+        
         private readonly T[] _myStack;
+        private int _place = int.Parse(Console.ReadLine());
+        private int _popNumber = int.Parse(Console.ReadLine());
 
-        public IEnumerator<T> GetEnumerator()
+        public Stack(int n)
         {
-            throw new NotImplementedException();
+            if (n <= 0)
+            {
+                throw new ArgumentException("n should be > 0");
+            }
+            _myStack = new T[n];
         }
+
 
         public T Peek()
         {
-            return _myStack[0];
+            return _myStack[_place];
         }
 
         public T Pop()
         {
-            return _myStack[0];
+            var popNmbr = _myStack[_popNumber];
+
+            return popNmbr;
         }
 
         public void Push(T obj)
         {
-            _myStack[0] = obj;
+            if (_place + 1 < _myStack.Length)
+            {
+                _myStack[_place] = obj;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Please fill up less number of place. Stack is smaller");
+            }
         }
 
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i <= _place; i++)
+            {
+                yield return _myStack[i];
+            }
+        }
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }

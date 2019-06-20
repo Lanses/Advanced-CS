@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,27 +8,47 @@ namespace HashSet
     {
 
         private readonly T[] _myHashSet;
-        private int n = 5;
+        private int _place = int.Parse(Console.ReadLine());
+        private int _hashCodeNumber = int.Parse(Console.ReadLine());
+
+        public HashSet(int n)
+        {
+            if (n <= 0)
+            {
+                throw new ArgumentException("n should be > 0");
+            }
+            _myHashSet = new T[n];
+        }
 
         public void Add(T obj)
         {
-            _myHashSet[0] = obj;
+            if (_place + 1 < _myHashSet.Length)
+            {
+                _myHashSet[_place] = obj;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Please fill up less number of place. HashSet is smaller");
+            }
         }
 
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i <= _place; i++)
+            {
+                yield return _myHashSet[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            return GetEnumerator();
         }
 
         T IHashSet<T>.GetHashCode()
         {
-            return _myHashSet[n];
+            return _myHashSet[_hashCodeNumber];
         }
     }
 }
