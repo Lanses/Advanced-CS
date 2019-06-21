@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event", "Event\Event.csproj", "{9EB61DAB-71A8-490B-BC52-E0A543F6B631}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Event", "Event\Event.csproj", "{9EB61DAB-71A8-490B-BC52-E0A543F6B631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{B877F3E9-5857-4C30-8117-3D9ACCB94150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{B877F3E9-5857-4C30-8117-3D9ACCB94150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceImplementatin", "InterfaceImplementatin\InterfaceImplementatin.csproj", "{6B73F298-E195-486F-A579-E7AE9F40F68E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceImplementatin", "InterfaceImplementatin\InterfaceImplementatin.csproj", "{6B73F298-E195-486F-A579-E7AE9F40F68E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomeStuff", "SomeStuff\SomeStuff.csproj", "{CE4EC6E8-49D8-4B02-B81F-CA0D88022219}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomeStuff", "SomeStuff\SomeStuff.csproj", "{CE4EC6E8-49D8-4B02-B81F-CA0D88022219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartingPoint", "StartingPoint\StartingPoint.csproj", "{04AD9130-F31E-4E0B-8525-C8B7DD2E177F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartingPoint", "StartingPoint\StartingPoint.csproj", "{04AD9130-F31E-4E0B-8525-C8B7DD2E177F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{FED90961-D750-4DA1-95D4-21F91C32DC78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{04AD9130-F31E-4E0B-8525-C8B7DD2E177F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04AD9130-F31E-4E0B-8525-C8B7DD2E177F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04AD9130-F31E-4E0B-8525-C8B7DD2E177F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED90961-D750-4DA1-95D4-21F91C32DC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED90961-D750-4DA1-95D4-21F91C32DC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED90961-D750-4DA1-95D4-21F91C32DC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED90961-D750-4DA1-95D4-21F91C32DC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

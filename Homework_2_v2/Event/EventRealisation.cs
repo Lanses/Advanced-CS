@@ -14,8 +14,8 @@ namespace Event
             {
                 D = d.D
             };
-
-            PriceDependingDistanceCalculation.Invoke(priceOfFlight.D);
+                
+            PriceDependingDistanceCalculation?.Invoke(priceOfFlight.D);
             return GetPrice(priceOfFlight);
 
         }
