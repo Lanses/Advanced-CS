@@ -8,34 +8,39 @@ namespace HashSet
     {
 
         private readonly T[] _myHashSet;
-        private int _place = int.Parse(Console.ReadLine());
-        private int _hashCodeNumber = int.Parse(Console.ReadLine());
+        private int _position = -1;
 
-        public HashSet(int n)
+        public HashSet(int size)
         {
-            if (n <= 0)
+            if (size <= 0)
             {
-                throw new ArgumentException("n should be > 0");
+                throw new ArgumentException("HashSet can't be empty, plase fill up size > 0");
             }
-            _myHashSet = new T[n];
+            _myHashSet = new T[size];
         }
 
-        public void Add(T obj)
+        public void Add(T elem)
         {
-            if (_place + 1 < _myHashSet.Length)
+            foreach (var item in this)
             {
-                _myHashSet[_place] = obj;
+                if (item.Equals(elem))
+                {
+                    throw new ArgumentException("This element is already in the collection");
+                }
+            }
+            if (_position + 1 < _myHashSet.Length)
+            {
+                _myHashSet[++_position] = elem;
             }
             else
             {
-                throw new IndexOutOfRangeException("Please fill up less number of place. HashSet is smaller");
+                throw new IndexOutOfRangeException("HashSet is full");
             }
         }
 
-
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i <= _place; i++)
+            for (int i = 0; i <= _position; i++)
             {
                 yield return _myHashSet[i];
             }
@@ -48,7 +53,7 @@ namespace HashSet
 
         T IHashSet<T>.GetHashCode()
         {
-            return _myHashSet[_hashCodeNumber];
+            return _myHashSet[_position];
         }
     }
 }

@@ -7,47 +7,70 @@ namespace Queue
     class Queue<T> : IQueue<T>
     {
         private readonly T[] _myQueue;
-        private int _place = int.Parse(Console.ReadLine());
-        private int _dequeueNumber = int.Parse(Console.ReadLine());
+        private int _firstInQueue = 0;
+        private int _lastInQueue = -1;
 
-        public Queue(int n)
+        public Queue(int size)
         {
-            if (n <= 0)
+            if (size <= 0)
             {
-                throw new ArgumentException("n should be > 0");
+                throw new ArgumentException("Queue can't be empty, plase fill up size > 0");
             }
-            _myQueue = new T[n];
+            _myQueue = new T[size];
         }
-
-
-        public T Dequeue()
+        public void Enqueue(T elem)
         {
-            var dqNmbr = _myQueue[_dequeueNumber];
-
-            return dqNmbr;
-        }
-
-        public void Enqueue(T obj)
-        {
-            if (_place + 1 < _myQueue.Length)
+            if (_lastInQueue < _myQueue.Length - 1)
             {
-                _myQueue[_place] = obj;
+                _myQueue[++_lastInQueue] = elem;
+            }
+            else if (_firstInQueue == 0)
+            {
+                throw new IndexOutOfRangeException("Queue is full");
             }
             else
             {
-                throw new IndexOutOfRangeException("Please fill up less number of place. Stack is smaller");
+                Rebuilding();
+                _myQueue[++_lastInQueue] = elem;
             }
         }
 
+        public T Dequeue()
+        {
+            if (_firstInQueue != _lastInQueue)
+            {
+                return _myQueue[_firstInQueue++];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Queue is empty");
+            }
+        }
+
+        private void Rebuilding()
+        {
+            for (int i = --_firstInQueue; i < _lastInQueue; i++)
+            {
+                _myQueue[i] = _myQueue[i + 1];
+            }
+            _lastInQueue--;
+        }
 
         public T Peek()
         {
-            return _myQueue[_place];
+            if (_firstInQueue != _lastInQueue)
+            {
+                return _myQueue[_firstInQueue];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Queue is empty");
+            }
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i <= _place; i++)
+            for (int i = 0; i <= _lastInQueue; i++)
             {
                 yield return _myQueue[i];
             }
