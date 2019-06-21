@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakeDB", "FakeDB", "{E5F647
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeDBConnection", "FakeDBConnection\FakeDBConnection.csproj", "{67C063C8-F08D-4B79-8725-CE5E1F0CCACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event", "Event\Event.csproj", "{A2736A0A-50F5-4505-BF7A-8B8AFF4D410D}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
