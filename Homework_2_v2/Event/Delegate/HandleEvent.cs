@@ -4,7 +4,5 @@ using System.Text;
 
 namespace Event.Delegate
 {
-    class HandleEvent
-    {
-    }
+    public delegate void HandleEvent(double d);
 }
